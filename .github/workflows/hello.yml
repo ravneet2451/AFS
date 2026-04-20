@@ -12,9 +12,12 @@ jobs:
       - name: Print name
         run: echo "Ravneet"
   say-bye:
+    needs: say-hello
     runs-on: ubuntu-latest
 
     steps:
       - name: Print message
         run: echo "Hello, Github Actions Bye!"
+ # By default jobs run parallely     
+ # To run time in sequence, we use needs
     

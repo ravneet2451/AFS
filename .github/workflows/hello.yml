@@ -7,10 +7,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print message
-        run: echo "Hello, Github Actions!"
-      - name: Print name
-        run: echo "Ravneet"
+      - name: Checkout code 
+        uses: action/checkout@v4
+      - name: list file
+        run: ls
+        
   say-bye:
     needs: say-hello
     runs-on: ubuntu-latest
@@ -20,4 +21,11 @@ jobs:
         run: echo "Hello, Github Actions Byee!"
  # By default jobs run parallely     
  # To run time in sequence, we use needs
+ # RUNNERS:Runners are machine where jons run
+ # Types of runners
+ #1 Github-hosted-> e.g. windows,ubuntu
+ #2 Self-hosted->e.g. your own server, your cloud virtual machine
+ #Uses Action(keyword):
+ # Actiosn: resulebale piece of code built in function provided by github
+ # Steps: clone a repo
     

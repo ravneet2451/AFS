@@ -25,6 +25,24 @@ jobs:
     steps:
       - name: Print message
         run: echo "Hello, Github Actions Byee!"
+  deploy-app:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code 
+        uses: actions/checkout@v4
+      - name: Setup node
+        uses: actions/setup-node@v4
+      - name: install dependencies
+        run: npm install
+      - name: Start server
+        run: node server.js
+      - name: deploy step
+        run: echo "deploy step"
+      - name: list file
+        run: ls
+        
+        
  # By default jobs run parallely     
  # To run time in sequence, we use needs
  # RUNNERS:Runners are machine where jons run
